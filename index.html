@@ -9,6 +9,11 @@
   </head>
   <body>
     <div id="unity-container" class="unity-desktop">
+       <div id="unity-footer">
+        <div id="unity-webgl-logo"></div>
+        <div id="unity-fullscreen-button"></div>
+        <div id="unity-build-title">chandrahas</div>
+      </div>
       <canvas id="unity-canvas" width=960 height=600></canvas>
       <div id="unity-loading-bar">
         <div id="unity-logo"></div>
@@ -17,11 +22,7 @@
         </div>
       </div>
       <div id="unity-warning"> </div>
-      <div id="unity-footer">
-        <div id="unity-webgl-logo"></div>
-        <div id="unity-fullscreen-button"></div>
-        <div id="unity-build-title">chandrahas</div>
-      </div>
+     
     </div>
     <script>
       var container = document.querySelector("#unity-container");
@@ -109,7 +110,7 @@
           fullscreenButton.onclick = () => {
             unityInstance.SetFullscreen(1);
           };
-          fullscreenButton.click();
+         
         }).catch((message) => {
           alert(message);
         });
