@@ -13,7 +13,7 @@
             width: 100%;
             height: 100%;
             display: flex;
-            background-color:rgb(3, 209, 250);
+            background-color: rgb(3, 209, 250);
             flex-direction: column;
         }
         header {
@@ -75,9 +75,6 @@
             padding: 10px;
             background-color: #f4f4f4;
         }
-        
-      
-
     </style>
 </head>
 <body>
@@ -88,70 +85,47 @@
         <button id="start-button">Start Game</button>
         <h2>Screenshots</h2>
         <div class="screenshots">
-            <img src="s1.jpg" alt="Screenshot 1" class="screenshot active">
-            <img src="s2.jpg" alt="Screenshot 2" class="screenshot">
-            <img src="s3.jpg" alt="Screenshot 3" class="screenshot">
-            <img src="s4.jpg" alt="Screenshot 2" class="screenshot">
-            <img src="s5.jpg" alt="Screenshot 3" class="screenshot"> 
-            <img src="s6.jpg" alt="Screenshot 2" class="screenshot">
-            <img src="s7.jpg" alt="Screenshot 3" class="screenshot">
-            <img src="s8.jpg" alt="Screenshot 2" class="screenshot">
-            <img src="s9.jpg" alt="Screenshot 3" class="screenshot"> 
-            <img src="s10.jpg" alt="Screenshot 2" class="screenshot">
-            <img src="s11.jpg" alt="Screenshot 3" class="screenshot">     
+            <img src="imagesC/s1.jpg" alt="Screenshot 1" class="screenshot active">
+            <img src="imagesC/s2.jpg" alt="Screenshot 2" class="screenshot">
+            <img src="imagesC/s3.jpg" alt="Screenshot 3" class="screenshot">
+            <img src="imagesC/s4.jpg" alt="Screenshot 2" class="screenshot">
+            <img src="imagesC/s5.jpg" alt="Screenshot 3" class="screenshot"> 
+            <img src="imagesC/s6.jpg" alt="Screenshot 2" class="screenshot">
+            <img src="imagesC/s7.jpg" alt="Screenshot 3" class="screenshot">
+            <img src="imagesC/s8.jpg" alt="Screenshot 2" class="screenshot">
+            <img src="imagesC/s9.jpg" alt="Screenshot 3" class="screenshot"> 
+            <img src="imagesC/s10.jpg" alt="Screenshot 2" class="screenshot">
+                 
         </div>
-        <div class="video">
+        <div class="video" >
             <h2>Game Video</h2>
-            <video width="320" height="240"  controls preload="none" >
-                <source src="https://youtu.be/BbRwFec1z1g?si=k_aSUfgmmQA9KMFj" type="video/mp4" >
-                Your browser does not support the video tag.
-            </video>
-            
+            <iframe id="videoId"  src="https://www.youtube.com/embed/BbRwFec1z1g?enablejsapi=1" > </iframe>
         </div>
         <div class="description" style="background-color:rgb(219, 221, 225); border-radius: 20px;">
             <h2>Long Description</h2>
             <p>Hai all, thank you for playing the game.</p>
-            
             <h2>You Can Play This Game in WebBrowser click ON Start Game Button to start game</h2>
-            <p>Chandrahas game  is an adventure puzzle game where players want to find a secret door and key and collect 21 lotus flowers
-                to win the game.</p>
-            
+            <p>Chandrahas game is an adventure puzzle game where players want to find a secret door and key and collect 21 lotus flowers to win the game.</p>
             <h3>Story:</h3>
-            <p>A sage's curse has turned all the people into zombies. To remove the curse, Goddess Shakti must be worshiped with 21
-                lotus flowers, but the Shakti Goddess temple is locked with a secret key. The secret key is kept somewhere, and
-                Vijay (player name) has to find it to open the temple.
-            Vijay collects a lotus flower and worships Goddess Shakti. If he worships with 21 lotus flowers, the people turned
-                into zombies due to the sage's curse will become human again.</p>
-            
+            <p>A sage's curse has turned all the people into zombies...</p>
             <h3>How to play the game?</h3>
-            <ol style=" text-align: justify;
-            margin: 0;
-            padding: 0; list-style-position: inside;">
+            <ol style="text-align: justify; margin: 0; padding: 0; list-style-position: inside;">
                 <li>First, you need to find the secret door and secret key to open it.</li>
-                <li>Collect one lotus flower and enter the temple. Place the lotus flower on the wooden cube (the lotus flower will
-                    disappear; click on the hand button to drop the lotus flower, and the weapon button will disappear). Collect 21
-                    lotus flowers to win the game.</li>
+                <li>Collect one lotus flower...</li>
                 <li>Click on the weapon icon to shoot lotus or sword at the enemy.</li>
                 <li>Player health decreases when a zombie comes closer.</li>
             </ol>
-            
             <h3>Player controls:</h3>
-            <ol style=" text-align: justify;
-            margin: 0;
-            padding: 0; list-style-position: inside;">
+            <ol style="text-align: justify; margin: 0; padding: 0; list-style-position: inside;">
                 <li>Click the play button to start the game.</li>
                 <li>Click the home button to return to the home screen.</li>
                 <li>Use the joystick to move the player left, right, forward, and backward.</li>
-                <li>Use the eye joystick to look around.</li>
-                <li>Click on the hand button to pick up and drop the lotus flower (note: you can pick up one lotus flower at a time;
-                    after dropping an object, you can pick up another lotus flower).</li>
+                <li>Move finger on screen to look around.</li>
+                <li>Click on the hand button to pick up and drop the lotus flower.</li>
                 <li>Click on the weapon button to shoot.</li>
             </ol>
-            
             <h2>Hope you will enjoy the game.</h2>
-            
             <p>Thank You!</p>
-
         </div>
         <div class="developer">
             <h2>Developer</h2>
@@ -165,7 +139,6 @@
         </div>
     </footer>
     <div id="unity-container" class="unity-desktop">
-        
         <canvas id="unity-canvas"></canvas>
         <div id="unity-loading-bar">
             <div id="unity-logo"></div>
@@ -177,21 +150,68 @@
     </div>
 
     <script>
-        var container = document.querySelector("#unity-container");
-        var canvas = document.querySelector("#unity-canvas");
-        var loadingBar = document.querySelector("#unity-loading-bar");
-        var progressBarFull = document.querySelector("#unity-progress-bar-full");
-        var warningBanner = document.querySelector("#unity-warning");
+        const video = document.getElementById('myVideo');
         var currentScreenshot = 0;
         var screenshots = document.querySelectorAll('.screenshot');
-
+        
         function showScreenshot(index) {
             screenshots.forEach((screenshot, i) => {
                 screenshot.classList.toggle('active', i === index);
             });
         }
+        // Navigation for screenshots
+        setInterval(() => {
+            currentScreenshot = (currentScreenshot + 1) % screenshots.length;
+            showScreenshot(currentScreenshot);
+        }, 3000); // Change screenshot every 3 seconds
+
+        // Initial display
+        showScreenshot(currentScreenshot);
+
+
+
+        var container = document.querySelector("#unity-container");
+        var canvas = document.querySelector("#unity-canvas");
+        var loadingBar = document.querySelector("#unity-loading-bar");
+        var progressBarFull = document.querySelector("#unity-progress-bar-full");
+        var warningBanner = document.querySelector("#unity-warning");
+
+        function unityShowBanner(msg, type) {
+            function updateBannerVisibility() {
+                warningBanner.style.display = warningBanner.children.length ? 'block' : 'none';
+            }
+            var div = document.createElement('div');
+            div.innerHTML = msg;
+            warningBanner.appendChild(div);
+            if (type == 'error') div.style = 'background: red; padding: 10px;';
+            else {
+                if (type == 'warning') div.style = 'background: yellow; padding: 10px;';
+                setTimeout(function() {
+                    warningBanner.removeChild(div);
+                    updateBannerVisibility();
+                }, 5000);
+            }
+            updateBannerVisibility();
+        }
+
+        var buildUrl = "Build";
+        var loaderUrl = buildUrl + "/webChandrahas.loader.js";
+        var config = {
+            dataUrl: buildUrl + "/webChandrahas.data.unityweb",
+            frameworkUrl: buildUrl + "/webChandrahas.framework.js.unityweb",
+            codeUrl: buildUrl + "/webChandrahas.wasm.unityweb",
+            streamingAssetsUrl: "StreamingAssets",
+            companyName: "Maruthi Techs",
+            productName: "Chandrahas",
+            productVersion: "0.3",
+            showBanner: unityShowBanner,
+        };
 
         document.getElementById("start-button").addEventListener("click", function() {
+            
+            let video = document.getElementById("videoId")
+         video.contentWindow.postMessage( '{"event":"command", "func":"stopVideo", "args":""}', '*');
+
             this.style.display = "none"; // Hide the start button
             container.style.display = "block"; // Show the Unity container
             loadingBar.style.display = "block"; // Show loading bar
@@ -209,18 +229,9 @@
             }
 
             var script = document.createElement("script");
-            script.src = "Build/webChandrahas.loader.js";
+            script.src = loaderUrl;
             script.onload = () => {
-                createUnityInstance(canvas, {
-                    dataUrl: "Build/webChandrahas.data.unityweb",
-                    frameworkUrl: "Build/webChandrahas.framework.js.unityweb",
-                    codeUrl: "Build/webChandrahas.wasm.unityweb",
-                    streamingAssetsUrl: "StreamingAssets",
-                    companyName: "Maruthi Techs",
-                    productName: "Chandrahas",
-                    productVersion: "0.3",
-                    showBanner: unityShowBanner,
-                }, (progress) => {
+                createUnityInstance(canvas, config, (progress) => {
                     progressBarFull.style.width = 100 * progress + "%";
                 }).then((unityInstance) => {
                     loadingBar.style.display = "none";
@@ -231,15 +242,6 @@
             document.body.appendChild(script);
         });
 
-        // Navigation for screenshots
-        setInterval(() => {
-            currentScreenshot = (currentScreenshot + 1) % screenshots.length;
-            showScreenshot(currentScreenshot);
-        }, 3000); // Change screenshot every 3 seconds
-
-        // Initial display
-        showScreenshot(currentScreenshot);
-
         // Mobile compatibility
         if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
             var meta = document.createElement('meta');
@@ -248,7 +250,6 @@
             document.getElementsByTagName('head')[0].appendChild(meta);
             container.className = "unity-mobile";
             canvas.className = "unity-mobile";
-           
 
             unityShowBanner('Game Loading....');
         } else {
@@ -262,7 +263,8 @@
                 canvas.height = window.innerHeight;
             }
         });
-        
+
+      
     </script>
 </body>
 </html>
