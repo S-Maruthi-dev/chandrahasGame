@@ -217,9 +217,34 @@
             showBanner: unityShowBanner,
         };
 
-        document.getElementById("start-button").addEventListener("click", function() {
+        document.getElementById("start-button").addEventListener("click", function() { 
+
+              // Function to lock the screen orientation
+            function lockOrientation() {
+                // Check if the Screen Orientation API is supported
+                if (screen.orientation && screen.orientation.lock) {
+                    screen.orientation.lock('landscape')
+                        .then(() => {
+                            console.log('Orientation locked to landscape');
+                        })
+                        .catch((error) => {
+                            console.error('Failed to lock orientation:', error);
+                        });
+                } else {
+                    console.warn('Screen Orientation API is not supported in this browser.');
+                }
+            }
+
+            // Call the function when the game starts or at an appropriate time
+            lockOrientation();
+
+            // Optionally, listen for orientation change events
+            window.addEventListener('orientationchange', () => {
+                console.log('Orientation changed to:', window.orientation);
+            });
+
             
-            let video = document.getElementById("videoId")
+         let video = document.getElementById("videoId")
          video.contentWindow.postMessage( '{"event":"command", "func":"stopVideo", "args":""}', '*');
 
             this.style.display = "none"; // Hide the start button
